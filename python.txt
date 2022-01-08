@@ -1,0 +1,56 @@
+
+>>> 5+5
+10
+>>> 50+50
+100
+>>> "hai"
+'hai'
+>>> 87-8
+-79
+>>> "welocme all"
+'welocme all'
+>>> name="revi"
+>>> no=4
+>>> loc="goa"
+>>> print("name is"+name+"loc:"+ and No:"+str(no))
+>>> name is revi loc:goa and No:4
+if num >= 0:
+    print("Positive or Zero")
+else:
+    print("Negative number")
+
+Positive or Zero
+
+>>> name =input("enter your name")
+enter your name revi
+>>> print(name)
+ revi
+
+>>> fruits =["apple","orange","banana","grapes"]
+>>> print(fruits[2])
+banana
+>>> for name in fruits:
+...     print(name)
+...
+apple
+orange
+banana
+grapes
+
+
+>>> class student:
+...     def setstudent(self,id,name,course):
+...             self.id=id
+...             self.name=name
+...             self.course=course
+...     def getstudent(self):
+...             print(self.id, " ", self.name, " ", self.course)
+...
+>>> std = student()
+>>> std.setstudent(153,"revi","Java")
+>>> std.getstudent()
+153   revi   Java
+>>> std.setstudent(103,"malu","C")
+>>> std.getstudent()
+103  malu   C
+
