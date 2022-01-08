@@ -1,0 +1,134 @@
+hp@master-node:~$ cd getting-started/
+.git/    .github/ app/     docs/
+hp@master-node:~$ cd getting-started/
+hp@master-node:~/getting-started$ cd app
+hp@master-node:~/getting-started/app$ docker network create todo-app
+ab899becf2f2af18a97af0164b522e69b7dbe43bee66f0453e2df65b0b03a627
+hp@master-node:~/getting-started/app$  sudo docker run -d --network todo-app --network-alias mysql -v todo-mysqdata:/var/lib/mysql ` -e MYSQL_ROOT_PASSWORD=secret ` -e MYSQL_DATABASE=todos mysql:5.7
+e96c4afed6984eb2b1f707c6aa1b3b678c10bd2bfa97098e2c480801af549bd2
+hp@master-node:~/getting-started/app$ sudo docker ps
+CONTAINER ID   IMAGE                 COMMAND        CREATED      STATUS             PORTS                                                                                  NAMES
+51d769c854aa   portainer/portainer   "/portainer"   9 days ago   Up About an hour   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+
+hp@master-node:~/getting-started/app$ sudo docker exec -it  51d769c854a mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.36 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| todos              |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+hp@master-node:~/getting-started$ cd app
+hp@master-node:~/getting-started/app$ sudo docker run -it --network todo-app nicolaka/netshoot
+Unable to find image 'nicolaka/netshoot:latest' locally
+latest: Pulling from nicolaka/netshoot
+97518928ae5f: Already exists
+09706d35e05d: Pull complete
+4996ecc64030: Pull complete
+9a11de879aaa: Pull complete
+44f8e61e69d1: Pull complete
+dcf41a6beeb6: Pull complete
+d4d3a508f57b: Pull complete
+ca86b0e825d1: Pull complete
+7eeba344c2b1: Pull complete
+c52dc2d61c4a: Pull complete
+d04aa1a002c2: Pull complete
+7070cabd1e04: Pull complete
+Digest: sha256:d6942ec583d8e2818f5a5d7a71c303e861a70a11396ad9e9d25b355842e97589
+Status: Downloaded newer image for nicolaka/netshoot:latest
+                    dP            dP                           dP
+                    88            88                           88
+88d888b. .d8888b. d8888P .d8888b. 88d888b. .d8888b. .d8888b. d8888P
+88'  `88 88ooood8   88   Y8ooooo. 88'  `88 88'  `88 88'  `88   88
+88    88 88.  ...   88         88 88    88 88.  .88 88.  .88   88
+dP    dP `88888P'   dP   `88888P' dP    dP `88888P' `88888P'   dP
+
+Welcome to Netshoot! (github.com/nicolaka/netshoot)
+
+
+
+ 68e8f491e7d7  ~  dig mysql
+
+; <<>> DiG 9.16.22 <<>> mysql
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18611
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;mysql.                         IN      A
+
+;; ANSWER SECTION:
+mysql.                  600     IN      A       172.18.0.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.11#53(127.0.0.11)
+;; WHEN: Sat Jan 08 05:19:29 UTC 2022
+;; MSG SIZE  rcvd: 44
+ hp@master-node:~/Desktop/getting-started-master/app$sudo docker run -dp 3001:3000 -w /app -v "$(pwd):/app" --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos node:12-alpine sh -c "yarn install && yarn run dev"
+8ad0f830d7e191e9c0da5fedb9e2eee945de4baac039a1395706373cc5579ba8
+ hp@master-node:~/Desktop/getting-started-master/app$sudo docker exec -it f0276d810b42 mysql -p todos
+ Enter password:
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+mysql> select * from todo_items;
+Empty set (0.00 sec)
+
+mysql> exit
+
+
+
+
+
+
+docker compose.yml
+
+
+version: "3.7"
+
+services:
+  app:
+    image: node:12-alpine
+    command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos  
+volumes:
+  todo-mysql-data:
+
