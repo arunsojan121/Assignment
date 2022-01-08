@@ -1,0 +1,108 @@
+hp@master-node:~$ nano
+hp@master-node:~$ chmod 774 first.sh
+hp@master-node:~$ cat first.sh
+#!/bin/bash
+echo The script title is $0
+echo The first argument is $1
+echo The second argument is $2
+echo The third argument is $3
+hp@master-node:~$ ./first.sh 29 10 34
+The script title is ./first.sh
+The first argument is 29
+The second argument is 10
+The third argument is 34
+
+hp@master-node:~$ nano
+hp@master-node:~$ chmod 774 apple.sh
+hp@master-node:~$ ls -il animal.sh
+7318349394712374 -rwxrwxr-- 1 hp hp 238 Jan  8 10:15 apple.sh
+hp@master-node:~$ cat apple.sh
+#!/bin/bash
+echo "enter a fruit name"
+read apple
+if [ $fruit = apple ]
+        then echo "i like apple"
+elif  [ $fruit = mango]
+        then echo "i like this mango"
+elif [ $ fruit = orange ]
+        then echo "i love orange"
+        else echo "i love all fruits"
+
+fi
+~            
+hp@master-node:~$ ./apple.sh
+enter fruit
+apple
+ i like apple
+hp@master-node:~$ ./apple.sh
+enter fruit
+mango
+ i like mango
+
+hp@master-node:~$ nano
+hp@master-node:~$ chmod 774 array.sh
+hp@master-node:~$ cat array.sh
+#!/bin/bash
+mystates=("kerala" "tamilnadu" "karnataka" "assam")
+for state in "${mystates[@]}"
+        do
+                echo $state
+         done
+
+
+hp@master-node:~$ ./array.sh
+kerala
+tamilnadu
+karnataka
+assam
+
+hp@master-node:~$ nano
+hp@master-node:~$ chmod 777 oddeven.sh
+hp@master-node:~$ ls -il oddeven.sh
+13229323905761159 -rwxrwxrwx 1 hp hp 120 Jan  8 10:22 oddeven.sh
+hp@master-node:~$ cat oddeven.sh
+#!/bin/bash
+echo enter a number :
+read number
+if [ $((number % 2)) -eq 0 ]
+        then echo even number
+        else echo odd number
+fi
+hp@master-node:~$ ./oddeven.sh
+enter a number :
+9
+odd number
+ done
+
+
+hp@master-node:~$ ./array.sh:~$ ./oddeven.sh
+enter a number :
+6
+even number
+
+
+hp@master-node:~$ ansible-galaxy init --force --offline arunrole
+- Role arunrole was created successfully
+hp@master-node:~$ tree arunrole
+arunrole
+├── README.md
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── tasks
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
+
+8 directories, 8 files
+hp@master-node:~$ cd \arunrole
+hp@master-node:~/arunrole$ ls
+README.md  defaults  files  handlers  meta  tasks  templates  tests  vars
