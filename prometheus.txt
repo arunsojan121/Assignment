@@ -1,0 +1,160 @@
+hp@kubernetes-master:~$ cd /
+hp@kubernetes-master:/$ ls
+bin   cdrom  etc   lib    lib64   lost+found  mnt  proc  run   snap  sys  users   usr
+boot  dev    home  lib32  libx32  media       opt  root  sbin  srv   tmp  users2  var
+hp@kubernetes-master:/$ etc
+
+Command 'etc' not found, did you mean:
+
+  command 'dtc' from snap device-tree-compiler (1.6.1)
+  command 'htc' from deb httptunnel (3.3+dfsg-4)
+  command 'etr' from deb extremetuxracer (0.7.5-1build2)
+  command 'rtc' from deb nvram-wakeup (1.1-4build1)
+  command 'etw' from deb etw (3.6+svn162-5)
+  command 'tc' from deb iproute2 (5.5.0-1ubuntu1)
+  command 'ecc' from deb ecere-dev (0.44.15-1build3)
+  command 'etcd' from deb etcd-server (3.2.26+dfsg-6)
+  command 'etm' from deb etm (3.2.30-1)
+  command 'atc' from deb bsdgames (2.17-28build1)
+  command 'dtc' from deb device-tree-compiler (1.5.1-1)
+
+See 'snap info <snapname>' for additional versions.
+
+hp@kubernetes-master:/$ /etc/docker/daemon.json
+bash: /etc/docker/daemon.json: No such file or directory
+hp@kubernetes-master:/$ etc /
+
+Command 'etc' not found, did you mean:
+
+  command 'dtc' from snap device-tree-compiler (1.6.1)
+  command 'etw' from deb etw (3.6+svn162-5)
+  command 'etr' from deb extremetuxracer (0.7.5-1build2)
+  command 'ecc' from deb ecere-dev (0.44.15-1build3)
+  command 'htc' from deb httptunnel (3.3+dfsg-4)
+  command 'tc' from deb iproute2 (5.5.0-1ubuntu1)
+  command 'dtc' from deb device-tree-compiler (1.5.1-1)
+  command 'atc' from deb bsdgames (2.17-28build1)
+  command 'etm' from deb etm (3.2.30-1)
+  command 'etcd' from deb etcd-server (3.2.26+dfsg-6)
+  command 'rtc' from deb nvram-wakeup (1.1-4build1)
+
+See 'snap info <snapname>' for additional versions.
+
+hp@kubernetes-master:/$ etc/
+bash: etc/: Is a directory
+hp@kubernetes-master:/$ /etc/docker/daemon.json
+bash: /etc/docker/daemon.json: No such file or directory
+hp@kubernetes-master:/$ cd etc
+hp@kubernetes-master:/etc$ /etc/docker/daemon.json
+bash: /etc/docker/daemon.json: No such file or directory
+hp@kubernetes-master:/etc$ /docker/daemon.json
+bash: /docker/daemon.json: No such file or directory
+hp@kubernetes-master:/etc$ ls
+acpi                           fprintd.conf     logrotate.conf           rcS.d
+adduser.conf                   fstab            logrotate.d              resolv.conf
+alsa                           fuse.conf        lsb-release              rmt
+alternatives                   fwupd            ltrace.conf              rpc
+anacrontab                     gai.conf         machine-id               rsyslog.conf
+ansible                        gamemode.ini     magic                    rsyslog.d
+apg.conf                       gdb              magic.mime               rygel.conf
+apm                            gdm3             mailcap                  sane.d
+apparmor                       geoclue          mailcap.order            security
+apparmor.d                     ghostscript      manpath.config           selinux
+apport                         glvnd            mime.types               sensors3.conf
+appstream.conf                 gnome            mke2fs.conf              sensors.d
+apt                            groff            modprobe.d               services
+avahi                          group            modules                  sgml
+bash.bashrc                    group-           modules-load.d           shadow
+bash_completion                grub.d           mtab                     shadow-
+bash_completion.d              gshadow          mtools.conf              shells
+bindresvport.blacklist         gshadow-         mysql                    skel
+binfmt.d                       gss              nanorc                   snmp
+bluetooth                      gtk-2.0          netplan                  speech-dispatcher
+brlapi.key                     gtk-3.0          network                  ssh
+brltty                         hdparm.conf      networkd-dispatcher      ssl
+brltty.conf                    host.conf        NetworkManager           subgid
+ca-certificates                hostid           networks                 subgid-
+ca-certificates.conf           hostname         newt                     subuid
+ca-certificates.conf.dpkg-old  hosts            nginx                    subuid-
+calendar                       hosts.allow      nsswitch.conf            sudoers
+chatscripts                    hosts.deny       openvpn                  sudoers.d
+console-setup                  hp               opt                      sysctl.conf
+containerd                     ifplugd          os-release               sysctl.d
+cracklib                       init             PackageKit               systemd
+cron.d                         init.d           pam.conf                 terminfo
+cron.daily                     initramfs-tools  pam.d                    thermald
+cron.hourly                    inputrc          papersize                thunderbird
+cron.monthly                   insserv.conf.d   passwd                   timezone
+crontab                        iproute2         passwd-                  tmpfiles.d
+cron.weekly                    issue            pcmcia                   ubuntu-advantage
+cups                           issue.net        perl                     ucf.conf
+cupshelpers                    kernel           pki                      udev
+dbus-1                         kernel-img.conf  pm                       udisks2
+dconf                          kerneloops.conf  pnm2ppa.conf             ufw
+debconf.conf                   kubernetes       polkit-1                 update-manager
+debian_version                 ldap             popularity-contest.conf  update-motd.d
+default                        ld.so.cache      ppp                      update-notifier
+deluser.conf                   ld.so.conf       profile                  UPower
+depmod.d                       ld.so.conf.d     profile.d                usb_modeswitch.conf
+dhcp                           legal            prometheus               usb_modeswitch.d
+dictionaries-common            libao.conf       protocols                vdpau_wrapper.cfg
+dnsmasq.d                      libaudit.conf    pulse                    vim
+docker                         libblockdev      python3                  vtrgb
+dpkg                           libnl-3          python3.8                vulkan
+e2scrub.conf                   libpaper.d       rc0.d                    wgetrc
+emacs                          libreoffice      rc1.d                    wpa_supplicant
+environment                    locale.alias     rc2.d                    X11
+environment.d                  locale.gen       rc3.d                    xattr.conf
+ethertypes                     localtime        rc4.d                    xdg
+firefox                        logcheck         rc5.d                    xml
+fonts                          login.defs       rc6.d                    zsh_command_not_found
+hp@kubernetes-master:/etc$ nano daemon.json
+hp@kubernetes-master:/etc$ sudo nano daemon.json
+[sudo] password for hp: 
+hp@kubernetes-master:/etc$ cd ..
+hp@kubernetes-master:/$ ls
+bin   cdrom  etc   lib    lib64   lost+found  mnt  proc  run   snap  sys  users   usr
+boot  dev    home  lib32  libx32  media       opt  root  sbin  srv   tmp  users2  var
+hp@kubernetes-master:/$ cd tmp
+hp@kubernetes-master:/tmp$ nano prometheus.yml
+hp@kubernetes-master:/tmp$ cd ..
+hp@kubernetes-master:/$ docker service create --replicas 1 --name my-prometheus \
+>     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml \
+>     --publish published=9090,target=9090,protocol=tcp \
+>     prom/prometheus
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/services/create: dial unix /var/run/docker.sock: connect: permission denied
+hp@kubernetes-master:/$ sudo chmod 666 /var/run/docker.sock
+[sudo] password for hp: 
+hp@kubernetes-master:/$ docker service create --replicas 1 --name my-prometheus     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml     --publish published=9090,target=9090,protocol=tcp     prom/prometheus
+rme847im3upbl0382kbjoxpld
+overall progress: 1 out of 1 tasks 
+1/1: running   
+verify: Service converged 
+hp@kubernetes-master:/$ docker service create \
+>   --replicas 10 \
+>   --name ping_service \
+>   alpine ping docker.com
+image alpine:latest could not be accessed on a registry to record
+its digest. Each node will access alpine:latest independently,
+possibly leading to different nodes running different
+versions of the image.
+
+h80qlwovcjb9c6cuahgtbozsd
+overall progress: 10 out of 10 tasks 
+1/10: running   
+2/10: running   
+3/10: running   
+4/10: running   
+5/10: running   
+6/10: running   
+7/10: running   
+8/10: running   
+9/10: running   
+10/10: running   
+verify: Service converged 
+hp@kubernetes-master:/$ docker service ls
+ID             NAME            MODE         REPLICAS   IMAGE                    PORTS
+rme847im3upb   my-prometheus   replicated   1/1        prom/prometheus:latest   *:9090->9090/tcp
+h80qlwovcjb9   ping_service    replicated   10/10      alpine:latest            
+hp@kubernetes-master:/$ 
+
