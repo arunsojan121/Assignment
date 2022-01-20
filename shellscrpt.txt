@@ -14,7 +14,7 @@ The third argument is 34
 
 hp@master-node:~$ nano
 hp@master-node:~$ chmod 774 apple.sh
-hp@master-node:~$ ls -il animal.sh
+hp@master-node:~$ ls -il apple.sh
 7318349394712374 -rwxrwxr-- 1 hp hp 238 Jan  8 10:15 apple.sh
 hp@master-node:~$ cat apple.sh
 #!/bin/bash
